@@ -1,9 +1,9 @@
 menu "KernelSU"
 
 config KSU
-	tristate "KernelSU module"
-	default n
-	depends on OVERLAY_FS
+	tristate "KernelSU function support"
+	select OVERLAY_FS
+	default y
 	help
 	Enable kernel-level root privileges on Android System.
 
@@ -12,5 +12,6 @@ config KSU_DEBUG
 	depends on KSU
 	default n
 	help
-	This enables debug mode for KSU
+	Enable KernelSU debug mode
+
 endmenu
